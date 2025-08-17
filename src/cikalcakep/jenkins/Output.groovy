@@ -1,7 +1,7 @@
 package cikalcakep.jenkins
 
 class Output {
-    def someMethod() {
-        echo "Hello from Output!"
+    static def hello(String name) {
+        echo("Hello ${name}")
     }
 }
