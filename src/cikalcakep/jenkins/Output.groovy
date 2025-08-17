@@ -1,4 +1,4 @@
-package src.cikalcakep.jenkins;
+package cikalcakep.jenkins;
 
 class Output {
     static def hello(String name) {
