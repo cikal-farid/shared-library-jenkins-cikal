@@ -6,8 +6,10 @@ class Output {
     }
 }
 
+// Mendefinisikan langkah
 def steps = [
     echo: { msg -> println(msg) }
 ]
 
-Output.hello(steps, "Groovy")
+// Memanggil metode hello dengan satu argumen
+Output.hello("Groovy")
