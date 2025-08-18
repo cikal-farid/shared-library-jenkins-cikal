@@ -3,7 +3,7 @@ def call() {
         agent any
 
         environment {
-            PATH = "${PATH}:${WORKSPACE}/.npm-global/bin:/usr/local/bin:/usr/bin"
+            PATH = "${env.PATH}:${WORKSPACE}/.npm-global/bin:/usr/local/bin:/usr/bin"
         }
 
         stages {
@@ -21,7 +21,7 @@ def call() {
                     script {
                         hello.person([
                             firstName: "Cikal Muhammad Farid",
-                            lastName : "Al Gifari"
+                            lastName: "Al Gifari"
                         ])
                     }
                 }
@@ -37,7 +37,6 @@ def call() {
                         else
                           echo "✅ htmlhint already installed"
                         fi
-
                         echo "📍 htmlhint global bin dir: $(npm bin -g)"
                         ls -l $(npm bin -g) || true
                     '''
@@ -46,11 +45,13 @@ def call() {
 
             stage("HTML Build") {
                 steps {
-                    sh '''
-                        export PATH=$(npm bin -g):$PATH
-                        chmod +x ./html.sh
-                        ./html.sh test
-                    '''
+                    script {
+                        sh '''
+                            export PATH=$(npm bin -g):$PATH
+                            chmod +x ./html.sh
+                            ./html.sh test
+                        '''
+                    }
                 }
             }
 
