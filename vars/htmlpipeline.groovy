@@ -10,25 +10,25 @@ def call() {
 
         stages {
 
-            stage("Library Resources") {
-                steps {
-                    script {
-                        def config = libraryResource("config/build.json")
-                        echo(config)
-                    }
-                }
-            }
+            // stage("Library Resources") {
+            //     steps {
+            //         script {
+            //             def config = libraryResource("config/build.json")
+            //             echo(config)
+            //         }
+            //     }
+            // }
 
-            stage("Hello Person") {
-                steps {
-                    script {
-                        hello.person([
-                            firstName: "Cikal Muhammad Farid",
-                            lastName : "Al Gifari"
-                        ])
-                    }
-                }
-            }
+            // stage("Hello Person") {
+            //     steps {
+            //         script {
+            //             hello.person([
+            //                 firstName: "Cikal Muhammad Farid",
+            //                 lastName : "Al Gifari"
+            //             ])
+            //         }
+            //     }
+            // }
 
             stage("Setup Tools") {
                 steps {
@@ -59,29 +59,29 @@ def call() {
                 }
             }
 
-            stage("Global Variable") {
-                steps {
-                    script {
-                        echo(author())
-                        echo(author.myname())
-                        echo(author.mywife())
-                    }
-                }
-            }
+            // stage("Global Variable") {
+            //     steps {
+            //         script {
+            //             echo(author())
+            //             echo(author.myname())
+            //             echo(author.mywife())
+            //         }
+            //     }
+            // }
 
-            stage("Hello Groovy") {
-                steps {
-                    script {
-                        Output.hello(this, "Groovy")
-                    }
-                }
-            }
+            // stage("Hello Groovy") {
+            //     steps {
+            //         script {
+            //             Output.hello(this, "Groovy")
+            //         }
+            //     }
+            // }
 
-            stage("Hello World") {
-                steps {
-                    echo "Hello World"
-                }
-            }
+            // stage("Hello World") {
+            //     steps {
+            //         echo "Hello World"
+            //     }
+            // }
         }
     }
 }
