@@ -9,7 +9,7 @@ def call() {
 
     stages {
 
-        stage("Library Resource") {
+        stage("Library Resources") {
             steps {
                 script {
                     def config = libraryResource("config/build.json")
